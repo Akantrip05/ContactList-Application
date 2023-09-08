@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userViewModel"
+            type="com.udemy.contactapplication.ViewModel.UserViewMOdel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container2"
+            android:layout_width="0dp"
+            android:layout_height="230dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:text="@={userViewModel.inputName}"
+                android:id="@+id/edt1"
+                android:layout_width="180dp"
+                android:layout_height="56dp"
+                android:hint="enter your name"
+                android:background="@drawable/editext"
+                android:padding="8dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="63dp" />
+
+            <EditText
+                android:text="@={userViewModel.inputEmail}"
+                android:id="@+id/editText"
+                android:layout_width="180dp"
+                android:layout_height="56dp"
+                android:padding="8dp"
+                android:background="@drawable/editext"
+                android:layout_marginEnd="96dp"
+                android:hint="enter email"
+                app:layout_constraintEnd_toStartOf="@+id/button3"
+                tools:layout_editor_absoluteY="138dp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="96dp"
+                android:layout_marginTop="60dp"
+                android:backgroundTint="#07554D"
+                android:text="Save"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/edt1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#E27D5D"
+                android:text="Clear"
+                tools:layout_editor_absoluteX="292dp"
+                tools:layout_editor_absoluteY="135dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="128dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container2"
+            app:layout_constraintVertical_bias="0.984"
+            tools:layout_editor_absoluteX="0dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
